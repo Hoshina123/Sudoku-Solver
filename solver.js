@@ -3,7 +3,7 @@ function solve(){
     if(bool){
         var grid = readTopic();
         if(!isValidGrid(grid)){
-            alert("Error:Empty grid");
+            alert("Error:Invalid grid");
         }else{
             if(search(grid)){
                 showOutput();
