@@ -1,0 +1,119 @@
+<html>
+    
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="solver.js"></script>
+    <script type="text/javascript" src="gridManager.js"></script>
+</head>
+
+<body>
+    <h1>Sudoku Solver</h1>
+    <table class="input" border="0" align="center" cellspacing="1" cellpadding="1">
+        <tr>
+            <td class="input_x"><input id="1" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="2" class="in_data" maxlength="1"></td>
+            <td class="input_r"><input id="3" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="4" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="5" class="in_data" maxlength="1"></td>
+            <td class="input_r"><input id="6" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="7" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="8" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="9" class="in_data" maxlength="1"></td>
+        </tr>
+        <tr>
+            <td class="input_x"><input id="10" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="11" class="in_data" maxlength="1"></td>
+            <td class="input_r"><input id="12" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="13" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="14" class="in_data" maxlength="1"></td>
+            <td class="input_r"><input id="15" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="16" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="17" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="18" class="in_data" maxlength="1"></td>
+        </tr>
+        <tr>
+            <td class="input_x"><input id="19" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="20" class="in_data" maxlength="1"></td>
+            <td class="input_r"><input id="21" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="22" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="23" class="in_data" maxlength="1"></td>
+            <td class="input_r"><input id="24" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="25" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="26" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="27" class="in_data" maxlength="1"></td>
+        </tr>
+        <tr>
+            <td class="input_t"><input id="28" class="in_data" maxlength="1"></td>
+            <td class="input_t"><input id="29" class="in_data" maxlength="1"></td>
+            <td class="input_tr"><input id="30" class="in_data" maxlength="1"></td>
+            <td class="input_t"><input id="31" class="in_data" maxlength="1"></td>
+            <td class="input_t"><input id="32" class="in_data" maxlength="1"></td>
+            <td class="input_tr"><input id="33" class="in_data" maxlength="1"></td>
+            <td class="input_t"><input id="34" class="in_data" maxlength="1"></td>
+            <td class="input_t"><input id="35" class="in_data" maxlength="1"></td>
+            <td class="input_t"><input id="36" class="in_data" maxlength="1"></td>
+        </tr>
+        <tr>
+            <td class="input_x"><input id="37" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="38" class="in_data" maxlength="1"></td>
+            <td class="input_r"><input id="39" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="40" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="41" class="in_data" maxlength="1"></td>
+            <td class="input_r"><input id="42" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="43" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="44" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="45" class="in_data" maxlength="1"></td>
+        </tr>
+        <tr>
+            <td class="input_x"><input id="46" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="47" class="in_data" maxlength="1"></td>
+            <td class="input_r"><input id="48" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="49" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="50" class="in_data" maxlength="1"></td>
+            <td class="input_r"><input id="51" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="52" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="53" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="54" class="in_data" maxlength="1"></td>
+        </tr>
+        <tr>
+            <td class="input_t"><input id="55" class="in_data" maxlength="1"></td>
+            <td class="input_t"><input id="56" class="in_data" maxlength="1"></td>
+            <td class="input_tr"><input id="57" class="in_data" maxlength="1"></td>
+            <td class="input_t"><input id="58" class="in_data" maxlength="1"></td>
+            <td class="input_t"><input id="59" class="in_data" maxlength="1"></td>
+            <td class="input_tr"><input id="60" class="in_data" maxlength="1"></td>
+            <td class="input_t"><input id="61" class="in_data" maxlength="1"></td>
+            <td class="input_t"><input id="52" class="in_data" maxlength="1"></td>
+            <td class="input_t"><input id="63" class="in_data" maxlength="1"></td>
+        </tr>
+        <tr>
+            <td class="input_x"><input id="64" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="65" class="in_data" maxlength="1"></td>
+            <td class="input_r"><input id="66" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="67" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="68" class="in_data" maxlength="1"></td>
+            <td class="input_r"><input id="69" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="70" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="71" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="72" class="in_data" maxlength="1"></td>
+        </tr>
+        <tr>
+            <td class="input_x"><input id="73" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="74" class="in_data" maxlength="1"></td>
+            <td class="input_r"><input id="75" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="76" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="77" class="in_data" maxlength="1"></td>
+            <td class="input_r"><input id="78" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="79" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="80" class="in_data" maxlength="1"></td>
+            <td class="input_x"><input id="81" class="in_data" maxlength="1"></td>
+        </tr>
+    </table>
+
+    <center>
+        <button type="button" onclick="clearGrid()">Clear</button>
+        <button type="button" onclick="solve()">Solve</button> 
+    </center>
+</body>
+
+</html>

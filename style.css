@@ -1,0 +1,74 @@
+h1{
+    font-family:Consolas;
+    font-size:30px;
+    text-align:center;
+}
+
+.input {
+    table-layout: fixed;
+    border: #0088ff 2px solid;
+    width: 355px;
+    height: 355px;
+    background-color: #ffffff;
+    vertical-align: middle;
+    border-collapse: collapse;
+    text-align: center;
+}
+.in_data {
+    font-family:Consolas;
+    font-size: 30px;
+    border: none;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    line-height: 28px;
+    text-align: center;
+    margin: 0px;
+    color: #0000ff;
+}
+td.input_x {
+    border-right: #0088ff 1px solid;
+    border-top: #0088ff 1px solid;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+td.input_r {
+    border-right: #0066ee 2px solid;
+    border-top: #0088ff 1px solid;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+td.input_t {
+    border-right: #0088ff 1px solid;
+    border-top: #0066ee 2px solid;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+td.input_tr {
+	border-right: #0066ee 2px solid;
+    border-top: #0066ee 2px solid;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+button{
+    font-family: Consolas;
+    font-size:20px;
+    background: #d3d3d3;
+    border-style: outset;
+    border-radius: 5px;
+    border-color: #0088ff;
+    border-width: 2px;
+    color:#000000;
+    width: auto;
+    height: 40px;
+    margin-top:5px;
+}
