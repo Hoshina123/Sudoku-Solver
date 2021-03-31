@@ -1,3 +1,7 @@
+body{
+    background-image:url(background.jpg);
+    background-size:cover;
+}
 h1{
     font-family:Consolas;
     font-size:30px;
