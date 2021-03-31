@@ -26,7 +26,7 @@ function checkInput(){
     }
     
     if(arr.every(function isZero(x){return x == 0})){
-        alert('Error:Wrong input');
+        alert('Error:Empty grid');
         return false
     }
     
