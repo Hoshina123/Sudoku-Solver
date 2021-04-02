@@ -76,3 +76,73 @@ button{
     height: 40px;
     margin-top:5px;
 }
+
+.popup{
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    left: 50%;
+    top: 50%;
+    margin-left: -200px;
+    margin-top: -120px;
+    background: #ffffff;
+    box-shadow: 2px 2px 10px #808080;
+    border-radius: 10px;
+    display: none;
+}
+label.title{
+    position: absolute;
+    background: transparent;
+    font-family: Consolas;
+    font-size:23px;
+    width: auto;
+    height: auto;
+    left: 7%;
+    top: 7%;
+    margin-left:auto;
+    margin-top:auto;
+    
+}
+button.close{
+    position: absolute;
+    border:none;
+    background: transparent;
+    background-size:40px 40px;
+    border-radius: 5px;
+    background-image: url(buttons/close.svg);
+    width: 40px;
+    height: 40px;
+    left: 85%;
+    top: 4%;
+}
+button.close:hover{
+    background-image: url(buttons/close_hover.svg);
+}
+label.message{
+    position: absolute;
+    background: transparent;
+    color: #303030;
+    font-family: Consolas;
+    font-size: 20px;
+    width: 400px;
+    height: 200px;
+    left: 10%;
+    top: 20%;
+}
+button.ok{
+    position:absolute;
+    font-family: Consolas;
+    font-size: 22px;
+    background: #0088ff;
+    border:none;
+    border-radius: 10px;
+    width: 135px;
+    height: 40px;
+    left: 60%;
+    top: 80%;
+    margin-top: auto;
+    margin-left: auto;
+}
+button.ok:hover{
+    background: #0066ff;
+}
