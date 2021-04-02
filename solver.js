@@ -1,14 +1,25 @@
+function hideMessage(){
+    var panel = document.getElementById("popWindow");
+    panel.style.display = 'none';
+}
+function showMessage(message){
+    var msg = document.getElementById("msg");
+    msg.innerText = message;
+    var panel = document.getElementById("popWindow");
+    panel.style.display = 'inline';
+}
+
 function solve(){
     var bool = checkInput();
     if(bool){
         var grid = readTopic();
         if(!isValidGrid(grid)){
-            alert("Error:Invalid grid");
+            showMessage("Error:Invalid grid");
         }else{
             if(search(grid)){
                 showOutput();
             }else{
-                alert("Error:No solution");
+                showMessage("Error:Invalid grid");
             }
         }
     }
@@ -20,13 +31,13 @@ function checkInput(){
     for(var i=0; i<81; i++){
         arr[i] = Number(document.getElementsByTagName("input")[i].value);
         if(isNaN(arr[i])){
-            alert('Error:Input shuold be a number between 1~9');
+            showMessage("Error:Input should be any number between 1 and 9");
             return false
         }
     }
     
     if(arr.every(function isZero(x){return x == 0})){
-        alert('Error:Empty grid');
+        showMessage("Error:Empty grid");
         return false
     }
     
