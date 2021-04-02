@@ -1,7 +1,9 @@
 <html>
     
 <head>
-    <mata charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sudoku Solver</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="solver.js"></script>
@@ -116,6 +118,12 @@
         <button type="button" onclick="clearGrid()">Clear</button>
         <button type="button" onclick="solve()">Solve</button> 
     </center>
-</body>
 
+    <div class="popup" id="popWindow">
+        <label class="title">Sudoku Solver - Message</label>
+        <button type="button" class="close" onclick="hideMessage()"></button>
+        <label class="message" id="msg"></label>
+        <button type="button" class="ok" onclick="hideMessage()">Continue</button>
+    </div>
+</body>
 </html>
