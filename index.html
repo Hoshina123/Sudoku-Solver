@@ -6,8 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sudoku Solver</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script type="text/javascript" src="solver.js"></script>
-    <script type="text/javascript" src="gridManager.js"></script>
+    <script type="text/javascript" src="Scripts/solver.js"></script>
+    <script type="text/javascript" src="Scripts/gridManager.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#closebtn").click(function(){
+                $("#popWindow").hide(350);
+            })
+            $("#okbtn").click(function(){
+                $("#popWindow").hide(350);
+            })
+        })
+    </script>
 </head>
 
 <body>
@@ -121,9 +132,9 @@
 
     <div class="popup" id="popWindow">
         <label class="title">Sudoku Solver - Message</label>
-        <button type="button" class="close" onclick="hideMessage()"></button>
+        <button type="button" class="close" id="closebtn"></button>
         <label class="message" id="msg"></label>
-        <button type="button" class="ok" onclick="hideMessage()">Continue</button>
+        <button type="button" class="ok" id="okbtn"">Continue</button>
     </div>
 </body>
 </html>
