@@ -15,7 +15,7 @@ function solve(){
             if(search(grid)){
                 showOutput();
             }else{
-                showMessage("Error:Invalid grid");
+                showMessage("Error:No solution");
             }
         }
     }
@@ -33,7 +33,7 @@ function checkInput(){
     }
     
     if(arr.every(function isZero(x){return x == 0})){
-        showMessage("Error:Empty grid");
+        showMessage("Error:Wrong Input");
         return false
     }
     
