@@ -1,8 +1,29 @@
-function showMessage(message){
+//show message on the web page
+function showMessage(message,type="info"){
     var msg = document.getElementById("msg");
     msg.innerText = message;
+    var msgIcon = document.getElementById("msg_icon");
+    if (type == "error"){
+        msgIcon.style.backgroundImage = "url(msgIcons/error.svg)";
+    }else{
+        msgIcon.style.backgroundImage = "url(msgIcons/info.svg)";
+    }
     var panel = document.getElementById("popWindow");
     panel.style.display = "inline";
+}
+
+//clear input
+function clearGrid(){
+    for (var n=0;n<81;n++){
+        document.body.getElementsByTagName("input")[n].value = '';
+        document.body.getElementsByTagName("input")[n].style.color = '#0000ff';
+    }
+    showMessage("Info: Input cleared");
+}
+
+function showLoading(){
+    var load = document.getElementById("load");
+    load.style.display = 'inline';
 }
 
 function solve(){
@@ -10,15 +31,18 @@ function solve(){
     if(bool){
         var grid = readTopic();
         if(!isValidGrid(grid)){
-            showMessage("Error:Invalid grid");
+            showMessage("Error:Invalid grid",type="error");
         }else{
             if(search(grid)){
                 showOutput();
             }else{
-                showMessage("Error:No solution");
+                showMessage("Error:No solution",type="error");
             }
         }
     }
+
+    var loading = document.getElementById("load");
+    loading.style.display = 'none';
 }
 
 function checkInput(){
@@ -27,13 +51,13 @@ function checkInput(){
     for(var i=0; i<81; i++){
         arr[i] = Number(document.getElementsByTagName("input")[i].value);
         if(isNaN(arr[i])){
-            showMessage("Error:Input should be any number between 1 and 9");
+            showMessage("Error:Input should be any number between 1 and 9",type="error");
             return false
         }
     }
     
     if(arr.every(function isZero(x){return x == 0})){
-        showMessage("Error:Wrong Input");
+        showMessage("Error:Wrong Input",type="error");
         return false
     }
     
@@ -171,5 +195,4 @@ function showOutput(){
             }
         }
     }
-    
 }
