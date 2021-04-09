@@ -168,7 +168,7 @@ button.ok:hover{
     border-radius: 5px;
     box-shadow: 2px 2px 10px #808080;
     opacity:0.9;
-    display: inline;
+    display: none;
 }
 img.loadIcon{
     position: absolute;
@@ -187,4 +187,8 @@ label.loadLabel{
     font-family: Consolas;
     font-size: 23px;
     color: #303030;
+}
+
+button.hide{
+    display: none;
 }

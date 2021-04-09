@@ -21,11 +21,7 @@ function clearGrid(){
     showMessage("Info: Input cleared");
 }
 
-function showLoading(){
-    var load = document.getElementById("load");
-    load.style.display = 'inline';
-}
-
+//solve the puzzle from the web page
 function solve(){
     var bool = checkInput();
     if(bool){
@@ -41,6 +37,7 @@ function solve(){
         }
     }
 
+    //hide the load window
     var loading = document.getElementById("load");
     loading.style.display = 'none';
 }
@@ -139,6 +136,10 @@ function isValidGrid(grid){
 
 
 function search(grid){
+    var loadWindow = document.getElementById("load");
+    loadWindow.style.display = 'inline';
+    console.log("inline");
+
     var freeCellList = getCellList(grid);
     var numberOfFreeCells = freeCellList.length;
     if(numberOfFreeCells == 0){
