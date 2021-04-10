@@ -42,6 +42,13 @@ function solve(){
     loading.style.display = 'none';
 }
 
+function load(){
+    var loadWindow = document.getElementById("load");
+    loadWindow.style.display = 'inline';
+
+    setTimeout("solve()",1);
+}
+
 function checkInput(){
     var arr = new Array();
     
@@ -136,10 +143,6 @@ function isValidGrid(grid){
 
 
 function search(grid){
-    var loadWindow = document.getElementById("load");
-    loadWindow.style.display = 'inline';
-    console.log("inline");
-
     var freeCellList = getCellList(grid);
     var numberOfFreeCells = freeCellList.length;
     if(numberOfFreeCells == 0){
