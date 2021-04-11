@@ -51,7 +51,7 @@ function load(){
     var loadWindow = document.getElementById("load");
     loadWindow.style.display = 'inline';
 
-    setTimeout("solve()",1);
+    setTimeout("solve()",10);
 }
 
 function checkInput(){
