@@ -23,6 +23,8 @@ function clearGrid(){
 
 //solve the puzzle from the web page
 function solve(){
+    var start = performance.now();
+
     var bool = checkInput();
     if(bool){
         var grid = readTopic();
@@ -40,6 +42,9 @@ function solve(){
     //hide the load window
     var loading = document.getElementById("load");
     loading.style.display = 'none';
+
+    var end = performance.now();
+    console.log(Math.round(end-start)+"ms");
 }
 
 function load(){
