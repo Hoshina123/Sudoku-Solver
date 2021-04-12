@@ -1,12 +1,24 @@
 //show message on the web page
-function showMessage(message,type="info"){
+function showMessage(title,message,type="info"){
+    var msgTitle = document.getElementById("msg_title");
+    msgTitle.innerText = title;
     var msg = document.getElementById("msg");
     msg.innerText = message;
     var msgIcon = document.getElementById("msg_icon");
+    var okbtn = document.getElementById("okbtn");
+    var clear = document.getElementById("solveClear");
     if (type == "error"){
         msgIcon.style.backgroundImage = "url(msgIcons/error.svg)";
-    }else{
+        okbtn.style.left = '60%';
+        clear.style.display = 'none';
+    }else if (type == "info"){
         msgIcon.style.backgroundImage = "url(msgIcons/info.svg)";
+        okbtn.style.left = '60%';
+        clear.style.display = 'none';
+    }else if (type == "solved"){
+        msgIcon.style.backgroundImage = "url(msgIcons/solved.svg)";
+        okbtn.style.left = '30%';
+        clear.style.display = 'inline';
     }
     var panel = document.getElementById("popWindow");
     panel.style.display = "inline";
@@ -18,7 +30,7 @@ function clearGrid(){
         document.body.getElementsByTagName("input")[n].value = '';
         document.body.getElementsByTagName("input")[n].style.color = '#0000ff';
     }
-    showMessage("Info: Input cleared");
+    showMessage("Sudoku Solver","Info: Input cleared");
 }
 
 //solve the puzzle from the web page
@@ -29,12 +41,14 @@ function solve(){
     if(bool){
         var grid = readTopic();
         if(!isValidGrid(grid)){
-            showMessage("Error:Invalid grid",type="error");
+            showMessage("Sudoku Solver","Error:Invalid grid",type="error");
         }else{
             if(search(grid)){
-                showOutput();
+                var stop = performance.now();
+                var time = stop-start;
+                showOutput(time);
             }else{
-                showMessage("Error:No solution",type="error");
+                showMessage("Sudoku Solver","Error:No solution",type="error");
             }
         }
     }
@@ -42,9 +56,6 @@ function solve(){
     //hide the load window
     var loading = document.getElementById("load");
     loading.style.display = 'none';
-
-    var end = performance.now();
-    console.log(Math.round(end-start)+"ms");
 }
 
 function load(){
@@ -60,13 +71,14 @@ function checkInput(){
     for(var i=0; i<81; i++){
         arr[i] = Number(document.getElementsByTagName("input")[i].value);
         if(isNaN(arr[i])){
-            showMessage("Error:Input should be any number between 1 and 9",type="error");
+            showMessage("Sudoku Solver","Error:Input should be any number between 1 and 9",
+            type="error");
             return false
         }
     }
     
     if(arr.every(function isZero(x){return x == 0})){
-        showMessage("Error:Wrong Input",type="error");
+        showMessage("Sudoku Solver","Error:Wrong Input",type="error");
         return false
     }
     
@@ -192,7 +204,7 @@ function search(grid){
     return true
 }
 
-function showOutput(){
+function showOutput(time_used){
     var grid = readTopic();
     var grid_original = readTopic();
     
@@ -204,4 +216,8 @@ function showOutput(){
             }
         }
     }
+
+    var formatTime = Math.round(time_used*1000)/1000;
+    var msg = "Execution time: "+formatTime+"ms";
+    showMessage("Puzzle solved",msg,type="solved");
 }
