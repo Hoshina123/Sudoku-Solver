@@ -5,19 +5,15 @@ function showMessage(title,message,type="info"){
     var msg = document.getElementById("msg");
     msg.innerText = message;
     var msgIcon = document.getElementById("msg_icon");
-    var okbtn = document.getElementById("okbtn");
     var clear = document.getElementById("solveClear");
     if (type == "error"){
         msgIcon.style.backgroundImage = "url(msgIcons/error.svg)";
-        okbtn.style.left = '60%';
         clear.style.display = 'none';
     }else if (type == "info"){
         msgIcon.style.backgroundImage = "url(msgIcons/info.svg)";
-        okbtn.style.left = '60%';
         clear.style.display = 'none';
     }else if (type == "solved"){
         msgIcon.style.backgroundImage = "url(msgIcons/solved.svg)";
-        okbtn.style.left = '30%';
         clear.style.display = 'inline';
     }
     var panel = document.getElementById("popWindow");

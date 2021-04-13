@@ -139,6 +139,24 @@ label.message{
     left: 23%;
     top: 27%;
 }
+button.clear{
+    position:absolute;
+    font-family: Consolas;
+    font-size: 22px;
+    background: #0088ff;
+    border:none;
+    border-radius: 10px;
+    width: 110px;
+    height: 40px;
+    left: 30%;
+    top: 80%;
+    margin-top: auto;
+    margin-left: auto;
+    display: none;
+}
+button.clear:hover{
+    background: #0066ff;
+}
 button.ok{
     position:absolute;
     font-family: Consolas;
@@ -154,24 +172,6 @@ button.ok{
     margin-left: auto;
 }
 button.ok:hover{
-    background: #0066ff;
-}
-button.clear{
-    position:absolute;
-    font-family: Consolas;
-    font-size: 22px;
-    background: #0088ff;
-    border:none;
-    border-radius: 10px;
-    width: 110px;
-    height: 40px;
-    left: 65%;
-    top: 80%;
-    margin-top: auto;
-    margin-left: auto;
-    display: none;
-}
-button.clear:hover{
     background: #0066ff;
 }
 
