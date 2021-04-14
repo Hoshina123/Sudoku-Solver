@@ -206,3 +206,39 @@ label.loadLabel{
     font-size: 23px;
     color: #303030;
 }
+
+div.setup{
+    position: absolute;
+    width: 350px;
+    height: 690px;
+    left: 0%;
+    top: 0%;
+    background: #7c7c7c;
+    opacity: 0.8;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: none;
+}
+label.setupLabel{
+    position: absolute;
+    left: 3%;
+    top: 2.5%;
+    font-family: Consolas;
+    font-size: 23px;
+    color: #000000;
+}
+button.hide{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 85%;
+    top: 1%;
+    border: none;
+    background-color: #7c7c7c;
+    background-size: 40px 40px;
+    border-radius: 5px;
+    background-image: url(buttons/close_setup.svg);
+}
+button.hide:hover{
+    background-color: #9b9b9b;
+}

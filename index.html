@@ -16,6 +16,9 @@
             $("#okbtn").click(function(){
                 $("#popWindow").hide(350);
             })
+            $("#hideSetup").click(function(){
+                $("#setupWindow").hide(350);
+            })
         })
     </script>
 </head>
@@ -142,6 +145,11 @@
     <div class="loading" id="load">
         <img class="loadIcon"></img>
         <label class="loadLabel">Loading...</label>
+    </div>
+
+    <div class="setup" id="setupWindow">
+        <label class="setupLabel">Sudoku Solver - Setup</label>
+        <button type="button" class="hide" id="hideSetup"></button>
     </div>
 </body>
 </html>
