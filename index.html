@@ -7,6 +7,7 @@
     <title>Sudoku Solver</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="Scripts/solver.js"></script>
+    <script type="text/javascript" src="Scripts/gridManager.js"></script>
     <script type="text/javascript" src="Scripts/jquery-3.6.0.min.js"></script>
     <script type="text/javascript">
         $(function(){
@@ -17,7 +18,12 @@
                 $("#popWindow").hide(350);
             })
             $("#hideSetup").click(function(){
-                $("#setupWindow").hide(350);
+                $("#setupWindow").slideUp(350);
+                $("#setupLaunch").fadeIn(250);
+            })
+            $("#setupLaunch").click(function(){
+                $("#setupWindow").slideDown(350);
+                $("#setupLaunch").fadeOut(200);
             })
         })
     </script>
@@ -147,6 +153,7 @@
         <label class="loadLabel">Loading...</label>
     </div>
 
+    <button type="button" class="setupbtn" id="setupLaunch"></button>
     <div class="setup" id="setupWindow">
         <label class="setupLabel">Sudoku Solver - Setup</label>
         <button type="button" class="hide" id="hideSetup"></button>

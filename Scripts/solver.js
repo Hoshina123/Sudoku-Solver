@@ -20,13 +20,10 @@ function showMessage(title,message,type="info"){
     panel.style.display = "inline";
 }
 
-//clear input
-function clearGrid(){
-    for (var n=0;n<81;n++){
-        document.body.getElementsByTagName("input")[n].value = '';
-        document.body.getElementsByTagName("input")[n].style.color = '#0000ff';
-    }
-    showMessage("Sudoku Solver","Info: Input cleared");
+//show the setup page
+function showSetup(){
+    var setup = document.getElementById("setupWindow");
+    setup.style.display = 'inline';
 }
 
 //solve the puzzle from the web page
