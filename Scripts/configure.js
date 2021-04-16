@@ -6,3 +6,11 @@ function clearGrid(){
     }
     showMessage("Sudoku Solver","Info: Input cleared");
 }
+
+//set background image
+function setBackground(imagePath){
+    var preview = document.getElementById("currentBackground");
+    preview.src = imagePath;
+    var docBody = document.body;
+    docBody.style.backgroundImage = "url("+imagePath+")";
+}

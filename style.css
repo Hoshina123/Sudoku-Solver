@@ -1,5 +1,5 @@
 body{
-    background-image:url(background.jpg);
+    background-image:url(./images/bg06.jpg);
     background-size:cover;
 }
 h1{
@@ -224,7 +224,7 @@ button.setupbtn{
 button.setupbtn:hover{
     background-color: rgb(235,235,235);
 }
-div.setup{
+.setup{
     position: absolute;
     width: 350px;
     height: 690px;
@@ -258,4 +258,100 @@ button.hide{
 }
 button.hide:hover{
     background-color: #9b9b9b;
+}
+.splitLine{
+    position: absolute;
+    background: #bebebe;
+    width: 270px;
+    height: 3px;
+    left: 2%;
+    top: 8%;
+    opacity: 0.6;
+}
+label.apperance{
+    position: absolute;
+    left: 6%;
+    top: 9%;
+    font-family: Consolas;
+    font-size: 23px;
+    color: #000000;
+}
+label.backgroundImage{
+    position: absolute;
+    left: 9%;
+    top: 13%;
+    font-family: Consolas;
+    font-size: 20px;
+    color: #000000;
+}
+img.currentBg{
+    position: absolute;
+    width: 210px;
+    height: 160px;
+    left: 10%;
+    top: 17%;
+    border-radius: 5px;
+}
+span.bgChoose{
+    position: absolute;
+    width: 50px;
+    height: 160px;
+    left: 71%;
+    top: 16.25%;
+    background: transparent;
+}
+button.bg1{
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    left: 1%;
+    top: 1%;
+    background-image: url(images/bg01.jpg);
+    background-size: 50px 30px;
+    border: none;
+    border-radius: 5px;
+}
+button.bg2{
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    left: 1%;
+    top: 21%;
+    background-image: url(images/bg02.jpg);
+    background-size: 50px 30px;
+    border: none;
+    border-radius: 5px;
+}
+button.bg3{
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    left: 1%;
+    top: 41%;
+    background-image: url(images/bg03.jpg);
+    background-size: 50px 30px;
+    border: none;
+    border-radius: 5px;
+}
+button.bg4{
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    left: 1%;
+    top: 61%;
+    background-image: url(images/bg04.jpg);
+    background-size: 50px 30px;
+    border: none;
+    border-radius: 5px;
+}
+button.bg5{
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    left: 1%;
+    top: 81%;
+    background-image: url(images/bg05.jpg);
+    background-size: 50px 30px;
+    border: none;
+    border-radius: 5px;
 }

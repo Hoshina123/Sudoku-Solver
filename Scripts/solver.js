@@ -20,12 +20,6 @@ function showMessage(title,message,type="info"){
     panel.style.display = "inline";
 }
 
-//show the setup page
-function showSetup(){
-    var setup = document.getElementById("setupWindow");
-    setup.style.display = 'inline';
-}
-
 //solve the puzzle from the web page
 function solve(){
     var start = performance.now();

@@ -7,7 +7,7 @@
     <title>Sudoku Solver</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="Scripts/solver.js"></script>
-    <script type="text/javascript" src="Scripts/gridManager.js"></script>
+    <script type="text/javascript" src="Scripts/configure.js"></script>
     <script type="text/javascript" src="Scripts/jquery-3.6.0.min.js"></script>
     <script type="text/javascript">
         $(function(){
@@ -157,6 +157,24 @@
     <div class="setup" id="setupWindow">
         <label class="setupLabel">Sudoku Solver - Setup</label>
         <button type="button" class="hide" id="hideSetup"></button>
+
+        <div class="splitLine"></div>
+
+        <label class="apperance">Apperance</label>
+        <label class="backgroundImage">Background image:</label>
+        <img class="currentBg" id="currentBackground" src="images/bg06.jpg"></img>
+        <span class="bgChoose" id="background_choose">
+            <button type="button" class="bg1" id="setbg_1" 
+            onclick="setBackground('images/bg01.jpg');"></button>
+            <button type="button" class="bg2" id="setbg_2" 
+            onclick="setBackground('images/bg02.jpg');"></button>
+            <button type="button" class="bg3" id="setbg_3" 
+            onclick="setBackground('images/bg03.jpg');"></button>
+            <button type="button" class="bg4" id="setbg_4" 
+            onclick="setBackground('images/bg04.jpg');"></button>
+            <button type="button" class="bg5" id="setbg_5" 
+            onclick="setBackground('images/bg05.jpg');"></button>
+        </span>
     </div>
 </body>
 </html>
