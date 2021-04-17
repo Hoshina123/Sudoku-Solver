@@ -1,11 +1,12 @@
 body{
-    background-image:url(./images/bg06.jpg);
-    background-size:cover;
+    background-image: url(./images/bg06.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 h1{
-    font-family:Consolas;
-    font-size:30px;
-    text-align:center;
+    font-family: Consolas;
+    font-size: 30px;
+    text-align: center;
 }
 
 .input {
@@ -19,7 +20,7 @@ h1{
     text-align: center;
 }
 .in_data {
-    font-family:Consolas;
+    font-family: Consolas;
     font-size: 30px;
     border: none;
     background-color: transparent;
@@ -286,8 +287,8 @@ label.backgroundImage{
 }
 img.currentBg{
     position: absolute;
-    width: 210px;
-    height: 160px;
+    width: 240px;
+    height: 195px;
     left: 10%;
     top: 17%;
     border-radius: 5px;
@@ -295,8 +296,8 @@ img.currentBg{
 span.bgChoose{
     position: absolute;
     width: 50px;
-    height: 160px;
-    left: 71%;
+    height: 180px;
+    left: 79%;
     top: 16.25%;
     background: transparent;
 }
@@ -316,7 +317,7 @@ button.bg2{
     width: 50px;
     height: 30px;
     left: 1%;
-    top: 21%;
+    top: 19%;
     background-image: url(images/bg02.jpg);
     background-size: 50px 30px;
     border: none;
@@ -327,7 +328,7 @@ button.bg3{
     width: 50px;
     height: 30px;
     left: 1%;
-    top: 41%;
+    top: 37%;
     background-image: url(images/bg03.jpg);
     background-size: 50px 30px;
     border: none;
@@ -338,7 +339,7 @@ button.bg4{
     width: 50px;
     height: 30px;
     left: 1%;
-    top: 61%;
+    top: 55%;
     background-image: url(images/bg04.jpg);
     background-size: 50px 30px;
     border: none;
@@ -349,9 +350,54 @@ button.bg5{
     width: 50px;
     height: 30px;
     left: 1%;
-    top: 81%;
+    top: 73%;
     background-image: url(images/bg05.jpg);
     background-size: 50px 30px;
     border: none;
     border-radius: 5px;
+}
+button.bg6{
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    left: 1%;
+    top: 91%;
+    background-image: url(images/bg06.jpg);
+    background-size: 50px 30px;
+    border: none;
+    border-radius: 5px;
+}
+a.imageUpload{
+    position: relative;
+    display: inline-block;
+    width: 290px;
+    height: 35px;
+    left: 10%;
+    top: 46%;
+    font-family: Consolas;
+    font-size: 20px;
+    background: #abd8ff;
+    border: 1px solid #0088ff;
+    border-radius: 5px;
+    overflow: hidden;
+    color: #000000;
+    text-decoration: none;
+    text-indent: 0;
+}
+a.imageUpload label{
+    position: absolute;
+    font-size: 22px;
+    left: 25%;
+    top: 8%;
+    background: transparent;
+    color: #000000;
+}
+a.imageUpload input{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+a.imageUpload:hover{
+    background: #60b5ff;
 }

@@ -23,7 +23,7 @@
             })
             $("#setupLaunch").click(function(){
                 $("#setupWindow").slideDown(350);
-                $("#setupLaunch").fadeOut(200);
+                $(this).fadeOut(200);
             })
         })
     </script>
@@ -144,8 +144,7 @@
         <img class="msgIcon" id="msg_icon"></img>
         <label class="message" id="msg"></label>
         <button type="button" onclick="clearGrid();" class="clear" id="solveClear">Clear</button>
-        <button type="button" class="ok" id="okbtn">Continue</button>
-        
+        <button type="button" class="ok" id="okbtn">Continue</button>  
     </div>
 
     <div class="loading" id="load">
@@ -174,7 +173,14 @@
             onclick="setBackground('images/bg04.jpg');"></button>
             <button type="button" class="bg5" id="setbg_5" 
             onclick="setBackground('images/bg05.jpg');"></button>
+            <button type="button" class="bg6" id="setbg_6" 
+            onclick="setBackground('images/bg06.jpg');"></button>
         </span>
+
+        <a herf="javascript:;" class="imageUpload">
+            <label>Upload image</label>
+            <input type="file" name="" id="uploadimg" accept="image/*"></input>
+        </a>
     </div>
 </body>
 </html>
