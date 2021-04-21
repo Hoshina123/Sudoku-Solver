@@ -13,22 +13,24 @@
         $(function(){
             $("#closebtn").click(function(){
                 $("#popWindow").hide(350);
-            })
+            });
             $("#okbtn").click(function(){
                 $("#popWindow").hide(350);
-            })
+            });
             $("#hideSetup").click(function(){
                 $("#setupWindow").slideUp(350);
                 $("#setupLaunch").fadeIn(250);
-            })
+            });
             $("#setupLaunch").click(function(){
                 $("#setupWindow").slideDown(350);
                 $(this).fadeOut(200);
-            })
+            });
+            $("#uploadimg").change(function(){
+                setLocalBackground();
+            });
         })
     </script>
 </head>
-
 <body>
     <h1>Sudoku Solver</h1>
     <table class="input" border="0" align="center" cellspacing="1" cellpadding="1">
@@ -179,7 +181,9 @@
 
         <a herf="javascript:;" class="imageUpload">
             <label>Upload image</label>
-            <input type="file" name="" id="uploadimg" accept="image/*"></input>
+            <form enctype="multipart/form-data">
+                <input type="file" name="" id="uploadimg" accept="image/*"></input>
+            </form>
         </a>
     </div>
 </body>
