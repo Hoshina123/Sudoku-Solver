@@ -28,3 +28,15 @@ function setLocalBackground(){
         docBody.style.backgroundImage = "url(data:image/png;base64,"+baseImg+")";
     }
 }
+
+//set color fill
+function setFillSetup(){
+    var setupOp = document.getElementById("op_slide");
+    var setupVal = document.getElementById("op_show");
+    var setupPage = document.getElementById("setupWindow");
+    var op = setupOp.value;
+    var opStr = op+"% 100%";
+    setupVal.innerText = op+"%";
+    setupOp.style.backgroundSize = opStr;
+    setupPage.style.background = "rgba(128,128,128,"+(op/100)+")";
+}

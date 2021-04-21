@@ -231,8 +231,7 @@ button.setupbtn:hover{
     height: 690px;
     left: 0%;
     top: 0%;
-    background: #7c7c7c;
-    opacity: 0.8;
+    background: rgba(128,128,128,0.8);
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     display: none;
@@ -252,13 +251,13 @@ button.hide{
     left: 85%;
     top: 1%;
     border: none;
-    background-color: #7c7c7c;
+    background-color: rgba(128,128,128,0.1);
     background-size: 40px 40px;
     border-radius: 5px;
     background-image: url(buttons/close_setup.svg);
 }
 button.hide:hover{
-    background-color: #9b9b9b;
+    background-color: rgba(128,128,128,0.5);
 }
 .splitLine{
     position: absolute;
@@ -400,4 +399,50 @@ a.imageUpload input{
 }
 a.imageUpload:hover{
     background: #60b5ff;
+}
+label.opacity{
+    position: absolute;
+    left: 9%;
+    top: 52%;
+    font-family: Consolas;
+    font-size: 20px;
+    color: #000000;
+}
+label.setupOpacity{
+    position: absolute;
+    left: 10%;
+    top: 55%;
+    font-family: Consolas;
+    font-size: 18px;
+    color: #000000;
+}
+input.opacitySlide_setup{
+    -webkit-appearance: none;
+    position: absolute;
+    width: 160px;
+    height: 10px;
+    left: 41%;
+    top: 56%;
+    border-radius: 10px;
+    background: -webkit-linear-gradient(#0088ff,#0088ff) no-repeat, #ececec;
+    background-size: 80% 100%;
+}
+input.opacitySlide_setup:focus{
+    outline: none;
+}
+input.opacitySlide_setup::-webkit-slider-thumb{
+    -webkit-apperance: none;
+    width: 20px;
+    height: 20px;
+    background: #0088ff;
+    border-radius: 50%;
+}
+label.opacityShow_setup{
+    position: absolute;
+    background: transparent;
+    width: 20px;
+    height: 20px;
+    font-family: Consolas;
+    left: 88%;
+    top: 55.5%;
 }

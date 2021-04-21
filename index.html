@@ -11,6 +11,7 @@
     <script type="text/javascript" src="Scripts/jquery-3.6.0.min.js"></script>
     <script type="text/javascript">
         $(function(){
+            //jQurey animate
             $("#closebtn").click(function(){
                 $("#popWindow").hide(350);
             });
@@ -185,6 +186,12 @@
                 <input type="file" name="" id="uploadimg" accept="image/*"></input>
             </form>
         </a>
+
+        <label class="opacity" id="setOpacity">Opacity:</label>
+        <label class="setupOpacity" id="setup_opacity">Setup page:</label>
+        <input type="range" class="opacitySlide_setup" id="op_slide" min="0" max="100" 
+        value="80" onchange="setFillSetup()"></input>
+        <label class="opacityShow_setup" id="op_show">80%</label>
     </div>
 </body>
 </html>
