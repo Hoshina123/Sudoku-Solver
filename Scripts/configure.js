@@ -17,7 +17,6 @@ function setBackground(imagePath){
 //set background image (in computer)
 function setLocalBackground(){
     var file = document.getElementById("uploadimg").files[0];
-    console.log(file);
     var reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = function(reader){
@@ -29,14 +28,25 @@ function setLocalBackground(){
     }
 }
 
-//set color fill
+//set color fill (setup page)
 function setFillSetup(){
-    var setupOp = document.getElementById("op_slide");
-    var setupVal = document.getElementById("op_show");
+    var setupOp = document.getElementById("opSlide_setup");
+    var setupVal = document.getElementById("opShow_setup");
     var setupPage = document.getElementById("setupWindow");
     var op = setupOp.value;
     var opStr = op+"% 100%";
     setupVal.innerText = op+"%";
     setupOp.style.backgroundSize = opStr;
     setupPage.style.background = "rgba(128,128,128,"+(op/100)+")";
+}
+//set color fill (popup window)
+function setFillPopup(){
+    var popupOp = document.getElementById("opSlide_popup");
+    var popupVal = document.getElementById("opShow_popup");
+    var popupWindow = document.getElementById("popWindow");
+    var op = popupOp.value;
+    var opStr = op+"% 100%";
+    popupVal.innerText = op+"%";
+    popupOp.style.backgroundSize = opStr;
+    popupWindow.style.background = "rgba(255,255,255,"+(op/100)+")";
 }

@@ -189,9 +189,14 @@
 
         <label class="opacity" id="setOpacity">Opacity:</label>
         <label class="setupOpacity" id="setup_opacity">Setup page:</label>
-        <input type="range" class="opacitySlide_setup" id="op_slide" min="0" max="100" 
-        value="80" onchange="setFillSetup()"></input>
-        <label class="opacityShow_setup" id="op_show">80%</label>
+        <input type="range" class="opacitySlide_setup" id="opSlide_setup" min="0" max="100" 
+        value="80" oninput="setFillSetup()"></input>
+        <label class="opacityShow_setup" id="opShow_setup">80%</label>
+        
+        <label class="popupOpacity" id="popup_opacity">Message:</label>
+        <input type="range" class="opacitySlide_popup" id="opSlide_popup" min="0" max="100" 
+        value="100" oninput="setFillPopup()"></input>
+        <label class="opacityShow_popup" id="opShow_popup">100%</label>
     </div>
 </body>
 </html>
