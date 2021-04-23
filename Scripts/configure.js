@@ -50,3 +50,14 @@ function setFillPopup(){
     popupOp.style.backgroundSize = opStr;
     popupWindow.style.background = "rgba(255,255,255,"+(op/100)+")";
 }
+//set color fill (history)
+function setFillHistory(){
+    var historyOp = document.getElementById("opSlide_history");
+    var historyVal = document.getElementById("opShow_history");
+    var historyWindow = document.getElementById("historyWindow");
+    var op = historyOp.value;
+    var opStr = op+"% 100%";
+    historyVal.innerText = op+"%";
+    historyOp.style.backgroundSize = opStr;
+    historyWindow.style.background = "rgba(128,128,128,"+(op/100)+")";
+}

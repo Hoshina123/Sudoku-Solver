@@ -21,15 +21,29 @@
             $("#hideSetup").click(function(){
                 $("#setupWindow").slideUp(350);
                 $("#setupLaunch").fadeIn(250);
+                $("#historyLaunch").fadeIn(250);
             });
             $("#setupLaunch").click(function(){
+                $("#historyWindow").slideUp(250);
                 $("#setupWindow").slideDown(350);
+                $("#historyLaunch").fadeOut(200);
                 $(this).fadeOut(200);
             });
             $("#uploadimg").change(function(){
                 setLocalBackground();
             });
-        })
+            $("#historyLaunch").click(function(){
+                $("#setupWindow").slideUp(250);
+                $("#historyWindow").slideDown(350);
+                $("#setupLaunch").fadeOut(200);
+                $(this).fadeOut(200);
+            });
+            $("#hideHistory").click(function(){
+                $("#historyWindow").slideUp(350);
+                $("#historyLaunch").fadeIn(250);
+                $("#setupLaunch").fadeIn(250);
+            });
+        });
     </script>
 </head>
 <body>
@@ -158,9 +172,9 @@
     <button type="button" class="setupbtn" id="setupLaunch"></button>
     <div class="setup" id="setupWindow">
         <label class="setupLabel">Sudoku Solver - Setup</label>
-        <button type="button" class="hide" id="hideSetup"></button>
+        <button type="button" class="hideS" id="hideSetup"></button>
 
-        <div class="splitLine"></div>
+        <div class="splitLineSetup"></div>
 
         <label class="apperance">Apperance</label>
         <label class="backgroundImage">Background image:</label>
@@ -197,6 +211,19 @@
         <input type="range" class="opacitySlide_popup" id="opSlide_popup" min="0" max="100" 
         value="100" oninput="setFillPopup()"></input>
         <label class="opacityShow_popup" id="opShow_popup">100%</label>
+
+        <label class="historyOpacity" id="history_opacity">History page:</label>
+        <input type="range" class="opacitySlide_history" id="opSlide_history" min="0" max="100" 
+        value="80" oninput="setFillHistory()"></input>
+        <label class="opacityShow_history" id="opShow_history">80%</label>
+    </div>
+
+    <button type="button" class="historybtn" id="historyLaunch"></button>
+    <div class="history" id="historyWindow">
+        <label class="historyLabel">Sudoku Solver - History</label>
+        <button type="button" class="hideH" id="hideHistory"></button>
+
+        <div class="splitLineHistory"></div>
     </div>
 </body>
 </html>
