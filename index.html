@@ -48,7 +48,7 @@
 </head>
 <body>
     <h1>Sudoku Solver</h1>
-    <table class="input" border="0" align="center" cellspacing="1" cellpadding="1">
+    <table class="input" id="sudoku" border="0" align="center" cellspacing="1" cellpadding="1">
         <tr>
             <td class="input_x"><input id="1" class="in_data" maxlength="1"></td>
             <td class="input_x"><input id="2" class="in_data" maxlength="1"></td>
@@ -123,7 +123,7 @@
             <td class="input_t"><input id="59" class="in_data" maxlength="1"></td>
             <td class="input_tr"><input id="60" class="in_data" maxlength="1"></td>
             <td class="input_t"><input id="61" class="in_data" maxlength="1"></td>
-            <td class="input_t"><input id="52" class="in_data" maxlength="1"></td>
+            <td class="input_t"><input id="62" class="in_data" maxlength="1"></td>
             <td class="input_t"><input id="63" class="in_data" maxlength="1"></td>
         </tr>
         <tr>
@@ -224,6 +224,114 @@
         <button type="button" class="hideH" id="hideHistory"></button>
 
         <div class="splitLineHistory"></div>
+
+        <div class="histories" id="history_show" align="center"></div>
+    </div>
+
+    <div class="sudokuCopy" id="sudokuClone">
+        <table class="tableCopy" align="center">
+            <tbody>
+                <tr>
+                    <td class="inputx_copy"><label id="c1" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c2" class="copy_data"></label></td>
+                    <td class="inputr_copy"><label id="c3" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c4" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c5" class="copy_data"></label></td>
+                    <td class="inputr_copy"><label id="c6" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c7" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c8" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c9" class="copy_data"></label></td>
+                </tr>
+                <tr>
+                    <td class="inputx_copy"><label id="c10" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c11" class="copy_data"></label></td>
+                    <td class="inputr_copy"><label id="c12" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c13" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c14" class="copy_data"></label></td>
+                    <td class="inputr_copy"><label id="c15" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c16" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c17" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c18" class="copy_data"></label></td>
+                </tr>
+                <tr>
+                    <td class="inputx_copy"><label id="c19" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c20" class="copy_data"></label></td>
+                    <td class="inputr_copy"><label id="c21" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c22" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c23" class="copy_data"></label></td>
+                    <td class="inputr_copy"><label id="c24" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c25" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c26" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c27" class="copy_data"></label></td>
+                </tr>
+                <tr>
+                    <td class="inputt_copy"><label id="c28" class="copy_data"></label></td>
+                    <td class="inputt_copy"><label id="c29" class="copy_data"></label></td>
+                    <td class="inputtr_copy"><label id="c30" class="copy_data"></label></td>
+                    <td class="inputt_copy"><label id="c31" class="copy_data"></label></td>
+                    <td class="inputt_copy"><label id="c32" class="copy_data"></label></td>
+                    <td class="inputtr_copy"><label id="c33" class="copy_data"></label></td>
+                    <td class="inputt_copy"><label id="c34" class="copy_data"></label></td>
+                    <td class="inputt_copy"><label id="c35" class="copy_data"></label></td>
+                    <td class="inputt_copy"><label id="c36" class="copy_data"></label></td>
+                </tr>
+                <tr>
+                    <td class="inputx_copy"><label id="c37" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c38" class="copy_data"></label></td>
+                    <td class="inputr_copy"><label id="c39" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c40" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c41" class="copy_data"></label></td>
+                    <td class="inputr_copy"><label id="c42" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c43" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c44" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c45" class="copy_data"></label></td>
+                </tr>
+                <tr>
+                    <td class="inputx_copy"><label id="c46" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c47" class="copy_data"></label></td>
+                    <td class="inputr_copy"><label id="c48" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c49" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c50" class="copy_data"></label></td>
+                    <td class="inputr_copy"><label id="c51" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c52" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c53" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c54" class="copy_data"></label></td>
+                </tr>
+                <tr>
+                    <td class="inputt_copy"><label id="c55" class="copy_data"></label></td>
+                    <td class="inputt_copy"><label id="c56" class="copy_data"></label></td>
+                    <td class="inputtr_copy"><label id="c57" class="copy_data"></label></td>
+                    <td class="inputt_copy"><label id="c58" class="copy_data"></label></td>
+                    <td class="inputt_copy"><label id="c59" class="copy_data"></label></td>
+                    <td class="inputtr_copy"><label id="c60" class="copy_data"></label></td>
+                    <td class="inputt_copy"><label id="c61" class="copy_data"></label></td>
+                    <td class="inputt_copy"><label id="c62" class="copy_data"></label></td>
+                    <td class="inputt_copy"><label id="c63" class="copy_data"></label></td>
+                </tr>
+                <tr>
+                    <td class="inputx_copy"><label id="c64" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c65" class="copy_data"></label></td>
+                    <td class="inputr_copy"><label id="c66" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c67" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c68" class="copy_data"></label></td>
+                    <td class="inputr_copy"><label id="c69" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c70" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c71" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c72" class="copy_data"></label></td>
+                </tr>
+                <tr>
+                    <td class="inputx_copy"><label id="c73" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c74" class="copy_data"></label></td>
+                    <td class="inputr_copy"><label id="c75" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c76" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c77" class="copy_data"></label></td>
+                    <td class="inputr_copy"><label id="c78" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c79" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c80" class="copy_data"></label></td>
+                    <td class="inputx_copy"><label id="c81" class="copy_data"></label></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </body>
 </html>

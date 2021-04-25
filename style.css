@@ -585,3 +585,96 @@ button.hideH:hover{
     top: 8%;
     opacity: 0.6;
 }
+
+.histories{
+    position: absolute;
+    background: transparent;
+    top: 10%;
+    width: 100%;
+    height: 89%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.histories::-webkit-scrollbar{
+    -webkit-apperance: none;
+    width: 10px;
+    border-radius: 5px;
+    background: #969696;
+}
+.histories::-webkit-scrollbar-track{
+    -webkit-apperance: none;
+    width: 10px;
+    border-radius: 5px;
+    background: #969696;
+}
+.histories::-webkit-scrollbar-thumb{
+    -webkit-apperance: none;
+    border-radius: 5px;
+    background: #a0a0a0;
+}
+.histories::-webkit-scrollbar-thumb:hover{
+    background: #c9c9c9;
+}
+.histories::-webkit-scrollbar-thumb:active{
+    background: #d6d6d6;
+}
+
+/*copy table data*/
+.sudokuCopy{
+    background: transparent;
+    display: none;
+}
+.tableCopy{
+    table-layout: fixed;
+    border: #0088ff 2px solid;
+    width: 177px;
+    height: 177px;
+    background-color: #ffffff;
+    vertical-align: middle;
+    border-collapse: collapse;
+    text-align: center;
+}
+.copy_data {
+    font-family: Consolas;
+    font-size: 15px;
+    border: none;
+    background-color: transparent;
+    width: 25px;
+    height: 25px;
+    line-height: 14px;
+    text-align: center;
+    margin: 0px;
+    color: #0000ff;
+}
+td.inputx_copy {
+    border-right: #0088ff 1px solid;
+    border-top: #0088ff 1px solid;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+}
+td.inputr_copy {
+    border-right: #0066ee 2px solid;
+    border-top: #0088ff 1px solid;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+}
+td.inputt_copy {
+    border-right: #0088ff 1px solid;
+    border-top: #0066ee 2px solid;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+}
+td.inputtr_copy {
+	border-right: #0066ee 2px solid;
+    border-top: #0066ee 2px solid;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+}
