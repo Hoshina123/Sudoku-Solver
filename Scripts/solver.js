@@ -24,6 +24,18 @@ function showMessage(title,message,type="info"){
 function solve(){
     var start = performance.now();
 
+    //clone sudoku to the small table
+    var tableCopy = readTopic();
+    for (var i=0;i<81;i++){
+        var id = "c"+(i+1);
+        var numLabel = document.getElementById(id);
+        var index = tableCopy[Math.floor(i/9)][i%9];
+        if (index == 0){
+            tableCopy[Math.floor(i/9)][i%9] = "";
+        }
+        numLabel.innerText = tableCopy[Math.floor(i/9)][i%9];
+    }
+
     var bool = checkInput();
     if(bool){
         var grid = readTopic();
@@ -44,24 +56,13 @@ function solve(){
     var loading = document.getElementById("load");
     loading.style.display = 'none';
 
-    //clone sudoku to the small table
-    var tableCopy = readTopic();
-    for (var i=0;i<81;i++){
-        var id = "c"+(i+1);
-        var numLabel = document.getElementById(id);
-        var index = tableCopy[Math.floor(i/9)][i%9];
-        if (index == 0){
-            tableCopy[Math.floor(i/9)][i%9] = "";
-        }
-        numLabel.innerText = tableCopy[Math.floor(i/9)][i%9];
-    }
     //add history
     var table = document.getElementById("sudokuClone");
-    var tableClone = table.cloneNode(true);
-    console.log(tableClone);
-    tableClone.setAttribute("id","sudoku"+start);
     var historyPage = document.getElementById("history_show");
-    historyPage.appendChild(historyPage);
+    var tableClone = table.cloneNode(true);
+    tableClone.setAttribute("id","sudoku-"+start);
+    tableClone.style.display = "inline";
+    historyPage.appendChild(tableClone);
 }
 
 function load(){

@@ -599,30 +599,32 @@ button.hideH:hover{
     -webkit-apperance: none;
     width: 10px;
     border-radius: 5px;
-    background: #969696;
+    background: #8d8d8d;
 }
 .histories::-webkit-scrollbar-track{
     -webkit-apperance: none;
     width: 10px;
     border-radius: 5px;
-    background: #969696;
+    background: #868686;
 }
 .histories::-webkit-scrollbar-thumb{
     -webkit-apperance: none;
     border-radius: 5px;
-    background: #a0a0a0;
+    background: #b9b9b9;
 }
 .histories::-webkit-scrollbar-thumb:hover{
-    background: #c9c9c9;
+    background: #dddddd;
 }
 .histories::-webkit-scrollbar-thumb:active{
-    background: #d6d6d6;
+    background: #e6e6e6;
 }
 
 /*copy table data*/
 .sudokuCopy{
     background: transparent;
     display: none;
+    padding-top: 2px;
+    padding-bottom: 2px;;
 }
 .tableCopy{
     table-layout: fixed;
@@ -677,4 +679,38 @@ td.inputtr_copy {
     height: 25px;
     text-align: center;
     line-height: 25px;
+}
+button.showTopic{
+    font-family: Consolas;
+    font-size: 13px;
+    background: #d3d3d3;
+    border-style: outset;
+    border-radius: 5px;
+    border-color: #0088ff;
+    border-width: 1px;
+    color: #000000;
+    width: auto;
+    height: 25px;
+    margin-top: 2px;
+    margin-bottom:3px;
+}
+button.showTopic:hover{
+    background: #e3e3e3;
+}
+button.showAnswer{
+    font-family: Consolas;
+    font-size: 13px;
+    background: #d3d3d3;
+    border-style: outset;
+    border-radius: 5px;
+    border-color: #0088ff;
+    border-width: 1px;
+    color: #000000;
+    width: auto;
+    height: 25px;
+    margin-top: 2px;
+    margin-bottom: 3px;
+}
+button.showAnswer:hover{
+    background: #e3e3e3;
 }
