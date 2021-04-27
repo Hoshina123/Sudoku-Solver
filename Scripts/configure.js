@@ -61,3 +61,13 @@ function setFillHistory(){
     historyOp.style.backgroundSize = opStr;
     historyWindow.style.background = "rgba(128,128,128,"+(op/100)+")";
 }
+
+//read topic (history page)
+function readHistoryTopic(topicId){
+    var historyLabels = document.getElementById(topicId).getElementsByTagName("label");
+    for (var i=0;i<81;i++){
+        var currentLabel = historyLabels[i];
+        var currentInput = document.getElementById(i+1);
+        currentInput.value = currentLabel.innerText;
+    }
+}

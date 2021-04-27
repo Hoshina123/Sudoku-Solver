@@ -65,6 +65,7 @@ function solve(){
     historyPage.appendChild(tableClone);
 }
 
+//load solver program
 function load(){
     var loadWindow = document.getElementById("load");
     loadWindow.style.display = 'inline';
@@ -72,6 +73,7 @@ function load(){
     setTimeout("solve()",10);
 }
 
+//check input (web page)
 function checkInput(){
     var arr = new Array();
     
@@ -92,6 +94,7 @@ function checkInput(){
     return true
 }
 
+//read topic (web page)
 function readTopic(){
     var arr = new Array();
     
@@ -114,6 +117,8 @@ function readTopic(){
     
     return grid
 }
+
+//get free cells
 function getCellList(grid){
     var freeCellList = new Array();
     index = 0
@@ -130,6 +135,7 @@ function getCellList(grid){
     return freeCellList
 }
 
+//valid sudoku determine
 function isValid(i,j,grid){
     for(var column=0; column<9; column++){
         if((column != j) && (grid[i][column] == grid[i][j])){
@@ -154,6 +160,7 @@ function isValid(i,j,grid){
     return true
 }
 
+//determine valid grid
 function isValidGrid(grid){
     for(var i=0; i<9; i++){
         for(var j=0; j<9; j++){
@@ -211,6 +218,7 @@ function search(grid){
     return true
 }
 
+//show the output
 function showOutput(time_used){
     var grid = readTopic();
     var grid_original = readTopic();
