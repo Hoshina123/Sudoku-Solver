@@ -71,3 +71,9 @@ function readHistoryTopic(topicId){
         currentInput.value = currentLabel.innerText;
     }
 }
+
+//read topic and show answer (history page)
+function readHistoryAnswer(historyId){
+    readHistoryTopic(historyId);
+    load();
+}
