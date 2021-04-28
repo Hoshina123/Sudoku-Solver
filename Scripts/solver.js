@@ -20,6 +20,16 @@ function showMessage(title,message,type="info"){
     panel.style.display = "inline";
 }
 
+//determine the difference in two sudokus (history page , web page)
+function isSame(historyId){
+    var history = document.getElementById(historyId);
+    if (history == null){
+        return false;
+    }else{
+        return true;
+    }
+}
+
 //solve the puzzle from the web page
 function solve(){
     var start = performance.now();
@@ -59,10 +69,13 @@ function solve(){
     //add history
     var table = document.getElementById("sudokuClone");
     var historyPage = document.getElementById("history_show");
-    var tableClone = table.cloneNode(true);
-    tableClone.setAttribute("id","sudoku-"+start);
-    tableClone.style.display = "inline";
-    historyPage.appendChild(tableClone);
+    var cloneId = "sudoku-"+start;
+    if (!isSame(cloneId)){
+        var tableClone = table.cloneNode(true);
+        tableClone.setAttribute("id",cloneId);
+        tableClone.style.display = "inline";
+        historyPage.appendChild(tableClone);
+    }
 }
 
 //load solver program
