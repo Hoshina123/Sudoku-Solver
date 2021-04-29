@@ -22,11 +22,21 @@ function showMessage(title,message,type="info"){
 
 //determine the difference in two sudokus (history page , web page)
 function isSame(historyId){
-    var history = document.getElementById(historyId);
-    if (history == null){
-        return false;
+    var history = document.getElementById(historyId).getElementsByTagName("label");
+    var webClone = document.getElementById("tableClone").getElementsByTagName("label");
+    var same = 0;
+    for (var i=0;i<81;i++){
+        var labelText = history[i].innerText;
+        var cloneText = webClone[i].innerText;
+        if (labelText == cloneText){
+            same += 1;
+        }
+    }
+
+    if (same >= 81){
+        return true
     }else{
-        return true;
+        return false
     }
 }
 
@@ -70,11 +80,15 @@ function solve(){
     var table = document.getElementById("sudokuClone");
     var historyPage = document.getElementById("history_show");
     var cloneId = "sudoku-"+start;
-    if (!isSame(cloneId)){
-        var tableClone = table.cloneNode(true);
-        tableClone.setAttribute("id",cloneId);
-        tableClone.style.display = "inline";
-        historyPage.appendChild(tableClone);
+    var tableClone = table.cloneNode(true);
+    tableClone.setAttribute("id","sudoku_temp");
+    tableClone.style.display = "inline";
+    historyPage.appendChild(tableClone);
+
+    if (isSame(cloneId)){
+        historyPage.removeChild(tableClone);
+    }else{
+        historyPage.setAttribute("id",cloneId);
     }
 }
 
@@ -134,7 +148,7 @@ function readTopic(){
 //get free cells
 function getCellList(grid){
     var freeCellList = new Array();
-    index = 0
+    var index = 0
     
     for(var i=0; i<9; i++){
         for(var j=0; j<9; j++){
