@@ -1,3 +1,5 @@
+'use strict';
+
 //show message on the web page
 function showMessage(title,message,type="info"){
     var msgTitle = document.getElementById("msg_title");
@@ -20,24 +22,37 @@ function showMessage(title,message,type="info"){
     panel.style.display = "inline";
 }
 
-//determine the difference in two sudokus (history page , web page)
-function isSame(historyId){
-    var history = document.getElementById(historyId).getElementsByTagName("label");
-    var webClone = document.getElementById("tableClone").getElementsByTagName("label");
-    var same = 0;
-    for (var i=0;i<81;i++){
-        var labelText = history[i].innerText;
-        var cloneText = webClone[i].innerText;
-        if (labelText == cloneText){
-            same += 1;
+//read all histories
+function readHistories(){
+    var historyLabels = document.getElementById("history_show").getElementsByTagName("label");
+    var grids = [];
+    for (var i=0;i<(historyLabels.length*81);i++){
+        var currentGrid = [];
+        currentGrid[i] = historyLabels[i].innerText;
+        if (i%81 == 0){
+            grids[Math.floor(i/81)] = currentGrid;
         }
     }
 
-    if (same >= 81){
-        return true
-    }else{
-        return false
+    return grids
+}
+//determine the difference in two sudokus (history page , web page)
+function isSame(copyId){
+    // read all histories
+    var histories = readHistories();
+    var uploads = document.getElementById(copyId).getElementsByTagName("label");
+    for (var i=0;i<81;i++){
+        uploads[i] = uploads[i].innerText;
     }
+
+    for (var n in histories){
+        // there has repetitions
+        if (n == uploads){
+            return true
+        }
+    }
+    // no repetitions
+    return false
 }
 
 //solve the puzzle from the web page
@@ -60,14 +75,14 @@ function solve(){
     if(bool){
         var grid = readTopic();
         if(!isValidGrid(grid)){
-            showMessage("Sudoku Solver","Error:Invalid grid",type="error");
+            showMessage("Sudoku Solver","Error:Invalid grid","error");
         }else{
             if(search(grid)){
                 var stop = performance.now();
                 var time = stop-start;
                 showOutput(time);
             }else{
-                showMessage("Sudoku Solver","Error:No solution",type="error");
+                showMessage("Sudoku Solver","Error:No solution","error");
             }
         }
     }
@@ -88,7 +103,7 @@ function solve(){
     if (isSame(cloneId)){
         historyPage.removeChild(tableClone);
     }else{
-        historyPage.setAttribute("id",cloneId);
+        tableClone.setAttribute("id",cloneId);
     }
 }
 
@@ -107,14 +122,13 @@ function checkInput(){
     for(var i=0; i<81; i++){
         arr[i] = Number(document.getElementsByTagName("input")[i].value);
         if(isNaN(arr[i])){
-            showMessage("Sudoku Solver","Error:Input should be any number between 1 and 9",
-            type="error");
+            showMessage("Sudoku Solver","Error:Input should be any number between 1 and 9","error");
             return false
         }
     }
     
     if(arr.every(function isZero(x){return x == 0})){
-        showMessage("Sudoku Solver","Error:Wrong Input",type="error");
+        showMessage("Sudoku Solver","Error:Wrong Input","error");
         return false
     }
     
@@ -261,5 +275,5 @@ function showOutput(time_used){
 
     var formatTime = Math.round(time_used*1000)/1000;
     var msg = "Execution time: "+formatTime+"ms";
-    showMessage("Puzzle solved",msg,type="solved");
+    showMessage("Puzzle solved",msg,"solved");
 }

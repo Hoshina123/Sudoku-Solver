@@ -1,3 +1,5 @@
+'use strict';
+
 //clear input
 function clearGrid(){
     for (var n=0;n<81;n++){
