@@ -25,29 +25,43 @@ function showMessage(title,message,type="info"){
 //read all histories
 function readHistories(){
     var historyLabels = document.getElementById("history_show").getElementsByTagName("label");
+
     var grids = [];
-    for (var i=0;i<(historyLabels.length*81);i++){
-        var currentGrid = [];
-        currentGrid[i] = historyLabels[i].innerText;
-        if (i%81 == 0){
-            grids[Math.floor(i/81)] = currentGrid;
+    var current = [];
+    for (var i=0;i<historyLabels.length;i++){
+        current[i] = historyLabels[i].innerText;
+        if ((i+1)%81 == 0){
+            grids[Math.floor((i+1)/81)] = current;
         }
     }
-
     return grids
 }
-//determine the difference in two sudokus (history page , web page)
+//return true if two sudokus have no difference
 function isSame(copyId){
     // read all histories
     var histories = readHistories();
-    var uploads = document.getElementById(copyId).getElementsByTagName("label");
+    if (histories.length == 0){
+        return false
+    }
+    var historyText = document.getElementById(copyId).getElementsByTagName("label");
+    var uploads = [];
+    for (var i=0;i<81;i++){
+        uploads[i] = historyText[i];
+    }
     for (var i=0;i<81;i++){
         uploads[i] = uploads[i].innerText;
     }
 
-    for (var n in histories){
-        // there has repetitions
-        if (n == uploads){
+    for (var i=0;i<histories.length;i++){
+        var bools = [];
+        for (var j=0;j<81;j++){
+            if (histories[i][j] == uploads[j]){
+                bools[j] == true;
+            }else{
+                bools[j] == false;
+            }
+        }
+        if (bools.every(function (x){return x})){
             return true
         }
     }
@@ -96,14 +110,12 @@ function solve(){
     var historyPage = document.getElementById("history_show");
     var cloneId = "sudoku-"+start;
     var tableClone = table.cloneNode(true);
-    tableClone.setAttribute("id","sudoku_temp");
+    tableClone.setAttribute("id",cloneId);
     tableClone.style.display = "inline";
     historyPage.appendChild(tableClone);
 
     if (isSame(cloneId)){
         historyPage.removeChild(tableClone);
-    }else{
-        tableClone.setAttribute("id",cloneId);
     }
 }
 

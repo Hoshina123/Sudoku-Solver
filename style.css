@@ -228,7 +228,7 @@ button.setupbtn:hover{
 .setup{
     position: absolute;
     width: 350px;
-    height: 690px;
+    height: 100%;
     left: 0%;
     top: 0%;
     background: rgba(128,128,128,0.8);
@@ -525,6 +525,7 @@ label.opacityShow_history{
     top: 61.5%;
 }
 
+/* history page */
 button.historybtn{
     position: absolute;
     width: 45px;
@@ -545,7 +546,7 @@ button.historybtn:hover{
 .history{
     position: absolute;
     width: 350px;
-    height: 690px;
+    height: 100%;
     left: 0%;
     top: 0%;
     background: rgba(128,128,128,0.8);
@@ -619,7 +620,7 @@ button.hideH:hover{
     background: #e6e6e6;
 }
 
-/*copy table data*/
+/* copy table data */
 .sudokuCopy{
     background: transparent;
     display: none;
