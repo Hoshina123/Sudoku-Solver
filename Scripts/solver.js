@@ -23,19 +23,18 @@ function showMessage(title,message,type="info"){
 }
 
 //solve the puzzle from the web page
-function solve(){
+function solve(addHistory){
     var start = performance.now();
 
     //clone sudoku to the small table
     var tableCopy = readTopic();
+    var numLabels = document.getElementById("sudokuClone").getElementsByClassName("copy_data");
     for (var i=0;i<81;i++){
-        var id = "c"+(i+1);
-        var numLabel = document.getElementById(id);
         var index = tableCopy[Math.floor(i/9)][i%9];
         if (index == 0){
             tableCopy[Math.floor(i/9)][i%9] = "";
         }
-        numLabel.innerText = tableCopy[Math.floor(i/9)][i%9];
+        numLabels[i].innerText = tableCopy[Math.floor(i/9)][i%9];
     }
 
     var bool = checkInput();
@@ -47,7 +46,7 @@ function solve(){
             if(search(grid)){
                 var stop = performance.now();
                 var time = stop-start;
-                showOutput(time);
+                showOutput(time,addHistory);
             }else{
                 showMessage("Sudoku Solver","Error:No solution","error");
             }
@@ -58,22 +57,28 @@ function solve(){
     var loading = document.getElementById("load");
     loading.style.display = 'none';
 
-    //add history
-    var table = document.getElementById("sudokuClone");
-    var historyPage = document.getElementById("history_show");
-    var cloneId = "sudoku-"+start;
-    var tableClone = table.cloneNode(true);
-    tableClone.setAttribute("id",cloneId);
-    tableClone.style.display = "inline";
-    historyPage.appendChild(tableClone);
+    if (addHistory){
+        //add history
+        var table = document.getElementById("sudokuClone");
+        var historyPage = document.getElementById("history_show");
+        var cloneId = "sudoku-"+start;
+        var tableClone = table.cloneNode(true);
+        tableClone.setAttribute("id",cloneId);
+        tableClone.style.display = "inline";
+        historyPage.appendChild(tableClone);
+    }
 }
 
 //load solver program
-function load(){
+function load(addHistory=true){
     var loadWindow = document.getElementById("load");
     loadWindow.style.display = 'inline';
 
-    setTimeout("solve()",10);
+    if (addHistory){
+        setTimeout("solve(true)",10);
+    }else{
+        setTimeout("solve(false)",10);
+    }
 }
 
 //check input (web page)
@@ -221,7 +226,7 @@ function search(grid){
 }
 
 //show the output
-function showOutput(time_used){
+function showOutput(time_used,showPopup=true){
     var grid = readTopic();
     var grid_original = readTopic();
     
@@ -236,5 +241,7 @@ function showOutput(time_used){
 
     var formatTime = Math.round(time_used*1000)/1000;
     var msg = "Execution time: "+formatTime+"ms";
-    showMessage("Puzzle solved",msg,"solved");
+    if (showPopup){
+        showMessage("Puzzle solved",msg,"solved");
+    }
 }
