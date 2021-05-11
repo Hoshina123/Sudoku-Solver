@@ -77,5 +77,5 @@ function readHistoryTopic(topicId){
 //read topic and show answer (history page)
 function readHistoryAnswer(historyId){
     readHistoryTopic(historyId);
-    load();
+    load(false);
 }

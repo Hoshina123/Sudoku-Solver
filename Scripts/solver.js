@@ -77,7 +77,7 @@ function load(addHistory=true){
     if (addHistory){
         setTimeout("solve(true)",10);
     }else{
-        setTimeout("solve(false)",10);
+        setTimeout("solve(false)",20);
     }
 }
 
