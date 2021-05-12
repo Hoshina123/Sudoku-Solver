@@ -22,6 +22,40 @@ function showMessage(title,message,type="info"){
     panel.style.display = "inline";
 }
 
+//determine is the sudoku has been tried to solve
+function isSame(grid81){
+    var labels = document.getElementById("history_show").getElementsByTagName("label");
+    var splitList = [];
+    if (labels.length <= 81){
+        return false
+    }
+
+    var currentList = [];
+    for (var i=0;i<labels.length;i++){
+        currentList[i] = labels[i].innerText;
+        if (currentList.length == 81){
+            splitList[Math.floor(i/81)] = currentList;
+        }
+    }
+    
+    var boolList = [];
+    for (var i=0;i<splitList.length;i++){
+        var current = splitList[i];
+        boolList = [];
+        for (var j=0;j<81;j++){
+            if (grid81[j] == current[j]){
+                boolList[j] = true;
+            }else{
+                boolList[j] = false;
+            }
+        }
+        if (boolList.every(function (x){return x})){
+            return true
+        }
+    }
+    return false
+}
+
 //solve the puzzle from the web page
 function solve(addHistory){
     var start = performance.now();
@@ -66,6 +100,15 @@ function solve(addHistory){
         tableClone.setAttribute("id",cloneId);
         tableClone.style.display = "inline";
         historyPage.appendChild(tableClone);
+
+        var nums = document.getElementById("sudokuClone").getElementsByTagName("label");
+        var inGrid = [];
+        for (var i=0;i<81;i++){
+            inGrid[i] = nums[i].innerText;
+        }
+        if (isSame(inGrid)){
+            historyPage.removeChild(tableClone);
+        }
     }
 }
 
