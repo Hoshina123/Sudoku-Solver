@@ -24,6 +24,7 @@ You can choose a picture on the right of the picture preview for the background 
 You can click the "Upload image" button to choose any local picture for the background too.
 
 *Transparency*
+
 You can set the trancparency of the setup page , popup message and the history page.
 The value is between 0% to 100%.
 

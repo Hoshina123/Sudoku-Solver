@@ -22,11 +22,13 @@
                 $("#setupWindow").slideUp(350);
                 $("#setupLaunch").fadeIn(250);
                 $("#historyLaunch").fadeIn(250);
+                $("#infoLaunch").fadeIn(250);
             });
             $("#setupLaunch").click(function(){
                 $("#historyWindow").slideUp(250);
                 $("#setupWindow").slideDown(350);
                 $("#historyLaunch").fadeOut(200);
+                $("#infoLaunch").fadeOut(200);
                 $(this).fadeOut(200);
             });
             $("#uploadimg").change(function(){
@@ -36,12 +38,14 @@
                 $("#setupWindow").slideUp(250);
                 $("#historyWindow").slideDown(350);
                 $("#setupLaunch").fadeOut(200);
+                $("#infoLaunch").fadeOut(200);
                 $(this).fadeOut(200);
             });
             $("#hideHistory").click(function(){
                 $("#historyWindow").slideUp(350);
                 $("#historyLaunch").fadeIn(250);
                 $("#setupLaunch").fadeIn(250);
+                $("#infoLaunch").fadeIn(250);
             });
         });
     </script>
@@ -176,7 +180,7 @@
 
         <div class="splitLineSetup"></div>
 
-        <label class="apperance">Apperance</label>
+        <label class="apperance">Apperance:</label>
         <label class="backgroundImage">Background image:</label>
         <img class="currentBg" id="currentBackground" src="images/bg06.jpg"></img>
         <span class="bgChoose" id="background_choose">
@@ -339,5 +343,7 @@
             onclick="readHistoryAnswer(this.parentNode.parentNode.id);">Answer</button>
         </center>
     </div>
+
+    <button class="infobtn" id="infoLaunch"></button>
 </body>
 </html>

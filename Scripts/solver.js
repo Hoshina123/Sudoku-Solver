@@ -26,10 +26,13 @@ function showMessage(title,message,type="info"){
 function isSame(grid81){
     var labels = document.getElementById("history_show").getElementsByTagName("label");
     var splitList = [];
+
+    //this is the first sudoku
     if (labels.length <= 81){
         return false
     }
 
+    //read all histories
     var currentList = [];
     for (var i=0;i<labels.length;i++){
         currentList[i] = labels[i].innerText;
