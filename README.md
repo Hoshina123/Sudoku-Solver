@@ -35,4 +35,5 @@ You can see all the sudokus that you tried to solve in the history page.
 
 # Info page
 **about**
+
 You can see the information of Sudoku Solver here.
