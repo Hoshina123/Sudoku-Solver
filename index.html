@@ -25,7 +25,6 @@
                 $("#infoLaunch").fadeIn(250);
             });
             $("#setupLaunch").click(function(){
-                $("#historyWindow").slideUp(250);
                 $("#setupWindow").slideDown(350);
                 $("#historyLaunch").fadeOut(200);
                 $("#infoLaunch").fadeOut(200);
@@ -35,7 +34,6 @@
                 setLocalBackground();
             });
             $("#historyLaunch").click(function(){
-                $("#setupWindow").slideUp(250);
                 $("#historyWindow").slideDown(350);
                 $("#setupLaunch").fadeOut(200);
                 $("#infoLaunch").fadeOut(200);
@@ -43,10 +41,22 @@
             });
             $("#hideHistory").click(function(){
                 $("#historyWindow").slideUp(350);
-                $("#historyLaunch").fadeIn(250);
                 $("#setupLaunch").fadeIn(250);
+                $("#historyLaunch").fadeIn(250);
                 $("#infoLaunch").fadeIn(250);
             });
+            $("#infoLaunch").click(function(){
+                $("#aboutWindow").slideDown(350);
+                $("#setupLaunch").fadeOut(200);
+                $("#historyLaunch").fadeOut(200);
+                $(this).fadeOut(200);
+            });
+            $("#hideAbout").click(function(){
+                $("#aboutWindow").slideUp(350);
+                $("#setupLaunch").fadeIn(250);
+                $("#historyLaunch").fadeIn(250);
+                $("#infoLaunch").fadeIn(250);
+            })
         });
     </script>
 </head>
@@ -345,5 +355,18 @@
     </div>
 
     <button class="infobtn" id="infoLaunch"></button>
+    <div class="about" id="aboutWindow">
+        <label class="aboutLabel">Sudoku Solver - About</label>
+        <button type="button" class="hideA" id="hideAbout"></button>
+
+        <div class="splitLineAbout"></div>
+
+        <img class="infoIcon" src="msgIcons/infoIcon.gif"></img>
+        <span class="information">
+            <label class="spanTitle">Sudoku Solver</label>
+            <label class="versionLabel">version 3.1.0</label>
+            <label class="label1">Solve all effective sudoku puzzles</label>
+        </span>
+    </div>
 </body>
 </html>

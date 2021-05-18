@@ -1,5 +1,5 @@
 ## Sudoku-Solver
-Solve any effective sudoku puzzle
+Solve all effective sudoku puzzles
 
 **Essential**
 
@@ -32,3 +32,7 @@ The value is between 0% to 100%.
 **History record**
 
 You can see all the sudokus that you tried to solve in the history page.
+
+# Info page
+**about**
+You can see the information of Sudoku Solver here.

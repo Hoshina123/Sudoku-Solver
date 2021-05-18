@@ -254,7 +254,7 @@ button.hideS{
     background-color: rgba(128,128,128,0.1);
     background-size: 40px 40px;
     border-radius: 5px;
-    background-image: url(buttons/close_setup.svg);
+    background-image: url(buttons/close_drawer.svg);
 }
 button.hideS:hover{
     background-color: rgba(128,128,128,0.5);
@@ -572,7 +572,7 @@ button.hideH{
     background-color: rgba(128,128,128,0.1);
     background-size: 40px 40px;
     border-radius: 5px;
-    background-image: url(buttons/close_setup.svg);
+    background-image: url(buttons/close_drawer.svg);
 }
 button.hideH:hover{
     background-color: rgba(128,128,128,0.5);
@@ -732,4 +732,90 @@ button.infobtn{
 }
 button.infobtn:hover{
     background-color: rgb(235,235,235);
+}
+.about{
+    position: absolute;
+    width: 350px;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    background: rgba(128,128,128,0.6);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: none;
+}
+label.aboutLabel{
+    position: absolute;
+    left: 3%;
+    top: 2.5%;
+    font-family: Consolas;
+    font-size: 22px;
+    color: #000000;
+}
+button.hideA{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 85%;
+    top: 1%;
+    border: none;
+    background-color: rgba(128,128,128,0.1);
+    background-size: 40px 40px;
+    border-radius: 5px;
+    background-image: url(buttons/close_drawer.svg);
+}
+button.hideA:hover{
+    background-color: rgba(128,128,128,0.5);
+}
+.splitLineAbout{
+    position: absolute;
+    background: #bebebe;
+    width: 280px;
+    height: 3px;
+    left: 2%;
+    top: 8%;
+    opacity: 0.6;
+}
+img.infoIcon{
+    position: absolute;
+    width: 330px;
+    height: 260px;
+    left: 2%;
+    top: 9%;
+    background: transparent;
+}
+span.information{
+    position: absolute;
+    width: 340px;
+    height: 240px;
+    left: 3%;
+    top: 42%;
+    background: transparent;
+    font-family: Consolas;
+}
+label.spanTitle{
+    position: absolute;
+    width: 310px;
+    left: 4%;
+    top: 2%;
+    background: transparent;
+    font-family: Consolas;
+    font-size: 30px;
+}
+label.versionLabel{
+    position: absolute;
+    left: 11%;
+    top: 15%;
+    background: transparent;
+    font-family: Consolas;
+    font-size: 27px;
+}
+label.label1{
+    position: absolute;
+    width: 340px;
+    left: 0.5%;
+    top: 30%;
+    background: transparent;
+    font-family: Consolas;
+    font-size: 18px;
 }
