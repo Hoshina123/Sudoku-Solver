@@ -1,39 +1,44 @@
-## Sudoku-Solver
+# Sudoku-Solver
+
 Solve all effective sudoku puzzles
 
-**Essential**
+## Essential
 
-*Solve a puzzle*
+### Solve a puzzle
 
 You can input an effective sudoku puzzle in "index.html"
 When the "Solve" button has been pressed , the program will try to solve the puzzle that you input and show the answer on the screen.
 
-*Clear*
+### Clear
 
 After one puzzle has been solved , if you want to solve another puzzle , press the "Clear" button. It'll clear all the value that have been inputed on the screen.
 
-**Wrongs**
+## Wrongs
+
 The program will tell you most of the wrong things when solving a puzzle , like "Invalid grid" , "Wrong input" and other wrong things.
 
-# Setup page
-**Apperance**
+## Setup page
 
-*Background image*
+### Apperance
+
+#### Background image
 
 You can choose a picture on the right of the picture preview for the background image.
 You can click the "Upload image" button to choose any local picture for the background too.
 
-*Transparency*
+#### Transparency
 
 You can set the trancparency of the setup page , popup message and the history page.
 The value is between 0% to 100%.
 
-# History page
-**History record**
+## History page
+
+### History record
 
 You can see all the sudokus that you tried to solve in the history page.
 
-# Info page
-**about**
+## Info page
+
+### about
 
 You can see the information of Sudoku Solver here.
